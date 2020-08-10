@@ -2,6 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Tween } from "react-gsap";
 import flower from "../assets/flowerYellow.svg";
+import linkedIn from "../assets/Linkedin-icon.png";
+import photo from "../assets/MyPhoto.JPG";
+import engaging from "../assets/engagingTech.png";
+import email from "../assets/at.svg"
 
 const Div1 = styled.div`
   width: 100%;
@@ -153,7 +157,7 @@ const Div10 = styled.div`
   }
 `;
 
-const StyledImage = styled.img`
+const FlowerImage = styled.img`
   position: absolute;
   z-index: 101;
   height: 80px;
@@ -242,6 +246,64 @@ const Software = styled.p`
   }
 `;
 
+const LinkedInImage = styled.img`
+  position: absolute;
+  z-index: 101;
+  height: 40px;
+  width: 40px;
+  margin-top: 300px;
+  margin-left: -95px;
+  border-radius: 4px;
+`;
+
+const WorkImage = styled.img`
+  position: absolute;
+  z-index: 101;
+  height: 40px;
+  width: 40px;
+  margin-top: 380px;
+  margin-left: -95px;
+  border-radius: 30px;
+  @media (prefers-reduced-motion: no-preference){
+    animation: App-logo-spin infinite 15s linear;
+  }
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
+const ExternalLink = ({ to = "/", children }) => (
+  <a href={to} target="_blank">
+    {children}
+  </a>
+);
+
+const MyImage = styled.img`
+  position: absolute;
+  z-index: 101;
+  height: 46px;
+  width: 44px;
+  margin-top: 297px;
+  margin-left: 65px;
+  border-radius: 50px;
+  object-fit: cover;
+  border 1px solid black;
+`;
+
+const EmailImage = styled.img`
+  position: absolute;
+  z-index: 101;
+  height: 40px;
+  width: 40px;
+  margin-top: 380px;
+  margin-left: 66px;
+`;
+
 // font-family: 'Abril Fatface', cursive;
 // font-family: 'Lobster', cursive;
 
@@ -258,7 +320,7 @@ const Home = () => {
           duration: 2,
         }}
       >
-        <StyledImage src={flower} alt="" />
+        <FlowerImage src={flower} alt="" />
       </Tween>
       <Tween from={{ opacity: 0, delay: 2.2 }}>
         <Hi>Hi.</Hi>
@@ -279,6 +341,22 @@ const Home = () => {
       <Tween from={{ opacity: 0, delay: 4.2 }}>
         <Software>Full Stack Software Engineer / Web Developer</Software>
       </Tween>
+      <ExternalLink to="https://www.linkedin.com/in/emily-violet-haynes-519279182/">
+        <Tween from={{ opacity: 0, delay: 4.6 }}>
+          <LinkedInImage src={linkedIn} alt="" />
+        </Tween>
+      </ExternalLink>
+      <ExternalLink to="https://www.engaging.tech/">
+        <Tween from={{ opacity: 0, delay: 4.8 }}>
+          <WorkImage src={engaging} alt="" />
+        </Tween>
+      </ExternalLink>
+      <Tween from={{ opacity: 0, delay: 5 }}>
+          <MyImage src={photo} alt="" />
+        </Tween>
+        <Tween from={{ opacity: 0, delay: 5.2 }}>
+          <EmailImage src={email} alt="" />
+        </Tween>
 
       <Tween from={{ y: "-20px", opacity: 0 }}>
         <Div1 />
