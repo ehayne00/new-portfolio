@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Tween } from "react-gsap";
 import flower from "../assets/flowerYellow.svg";
 import linkedIn from "../assets/Linkedin-icon.png";
 import photo from "../assets/MyPhoto.JPG";
 import engaging from "../assets/engagingTech.png";
-import email from "../assets/at.svg"
+import email from "../assets/at.svg";
 
 const Div1 = styled.div`
   width: 100%;
@@ -195,6 +195,14 @@ const Emily = styled.p`
   margin-top: 195px;
   margin-left: 34%;
   z-index: 102;
+  @media (max-width: 870px) {
+    margin-left: 30%;
+    font-size: 33px;
+  }
+  @media (max-width: 530px) {
+    margin-left: 10%;
+    font-size: 33px;
+  }
   @media (max-width: 414px) {
     margin-left: 3%;
     font-size: 33px;
@@ -210,6 +218,14 @@ const Violet = styled.p`
   margin-top: 195px;
   margin-left: 46%;
   z-index: 102;
+  @media (max-width: 870px) {
+    margin-left: 46%;
+    font-size: 33px;
+  }
+  @media (max-width: 530px) {
+    margin-left: 40%;
+    font-size: 33px;
+  }
   @media (max-width: 414px) {
     margin-left: 32%;
     font-size: 33px;
@@ -225,6 +241,14 @@ const Haynes = styled.p`
   margin-top: 195px;
   margin-left: 59%;
   z-index: 102;
+  @media (max-width: 870px) {
+    margin-left: 63%;
+    font-size: 33px;
+  }
+  @media (max-width: 530px) {
+    margin-left: 70%;
+    font-size: 33px;
+  }
   @media (max-width: 414px) {
     margin-left: 64%;
     font-size: 33px;
@@ -234,7 +258,8 @@ const Haynes = styled.p`
 const Software = styled.p`
   width: 100%;
   position: absolute;
-  color: rgb(75, 0, 130);
+  color: rgb(139, 0, 139);
+  text-shadow: 1px 1px 1px black;
   font-size: 25px;
   font-family: "Abril Fatface", cursive;
   margin-top: 470px;
@@ -254,6 +279,24 @@ const LinkedInImage = styled.img`
   margin-top: 300px;
   margin-left: -95px;
   border-radius: 4px;
+  box-shadow: 3px 10px 20px 1px rgba(250, 250, 210, 0.5);
+  :hover {
+    box-shadow: 3px 10px 20px 1px rgba(173, 255, 47, 0.5);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    animation: bobbing infinite 2s linear;
+  }
+  @keyframes bobbing {
+    0% {
+      top: 0px;
+    }
+    50% {
+      top: 10px;
+    }
+    100% {
+      top: 0px;
+    }
+  }
 `;
 
 const WorkImage = styled.img`
@@ -264,15 +307,22 @@ const WorkImage = styled.img`
   margin-top: 380px;
   margin-left: -95px;
   border-radius: 30px;
-  @media (prefers-reduced-motion: no-preference){
-    animation: App-logo-spin infinite 15s linear;
+  box-shadow: 3px 10px 20px 1px rgba(250, 250, 210, 0.5);
+  :hover {
+    box-shadow: 3px 10px 20px 1px rgba(173, 255, 47, 0.5);
   }
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
+  @media (prefers-reduced-motion: no-preference) {
+    animation: bobbing infinite 2s linear;
+  }
+  @keyframes bobbing {
+    0% {
+      top: 0px;
     }
-    to {
-      transform: rotate(360deg);
+    50% {
+      top: 10px;
+    }
+    100% {
+      top: 0px;
     }
   }
 `;
@@ -293,6 +343,25 @@ const MyImage = styled.img`
   border-radius: 50px;
   object-fit: cover;
   border 1px solid black;
+  box-shadow: 3px 10px 20px 1px rgba(250, 250, 210, 0.5);
+  :hover {
+    box-shadow: 3px 10px 20px 1px rgba(173, 255, 47, 0.5);
+    cursor: pointer;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    animation: bobbing infinite 2s linear;
+  }
+  @keyframes bobbing {
+    0% {
+      top: 0px;
+    }
+    50% {
+      top: 10px;
+    }
+    100% {
+      top: 0px;
+    }
+  }
 `;
 
 const EmailImage = styled.img`
@@ -302,14 +371,98 @@ const EmailImage = styled.img`
   width: 40px;
   margin-top: 380px;
   margin-left: 66px;
+  border-radius: 30px;
+  box-shadow: 3px 10px 20px 1px rgba(250, 250, 210, 0.5);
+  :hover {
+    box-shadow: 3px 10px 20px 1px rgba(173, 255, 47, 0.5);
+    cursor: pointer;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    animation: bobbing infinite 2s linear;
+  }
+  @keyframes bobbing {
+    0% {
+      top: 0px;
+    }
+    50% {
+      top: 10px;
+    }
+    100% {
+      top: 0px;
+    }
+  }
+`;
+
+const Popup1 = styled.div`
+  width: 400px;
+  height: 280px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px 15px 15px 0px;
+  position: absolute;
+  margin-left: 60%;
+  margin-top: 30px;
+  z-index: 109;
+  @media (max-width: 1010px) {
+    width: 350px;
+    height: 280px;
+    margin-left: 63%;
+  }
+  @media (max-width: 954px) {
+    width: 300px;
+    height: 280px;
+    margin-left: 63%;
+  }
+  @media (max-width: 825px) {
+    width: 90%;
+    height: 250px;
+    margin-left: 5%;
+  }
+`;
+
+const Popup2 = styled.div`
+  width: 400px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0px 15px 15px 15px;
+  position: absolute;
+  margin-left: 60%;
+  margin-top: 430px;
+  z-index: 109;
+  @media (max-width: 1010px) {
+    width: 350px;
+    height: 100px;
+    margin-left: 63%;
+  }
+  @media (max-width: 954px) {
+    width: 300px;
+    height: 100px;
+    margin-left: 63%;
+  }
+  @media (max-width: 825px) {
+    width: 90%;
+    margin-left: 5%;
+  }
 `;
 
 // font-family: 'Abril Fatface', cursive;
 // font-family: 'Lobster', cursive;
 
 const Home = () => {
+  const [popUp1, setPopUp1] = useState(false);
+  const [popUp2, setPopUp2] = useState(false);
   return (
     <>
+      {popUp1 && (
+        <Popup1>
+          <p>North London based</p>
+          <p>X</p>
+        </Popup1>
+      )}
+      {popUp2 && (
+        <Popup2>
+          <p>ehayne00@hotmail.com</p>
+        </Popup2>
+      )}
       <Tween
         from={{
           y: "-300px",
@@ -352,11 +505,11 @@ const Home = () => {
         </Tween>
       </ExternalLink>
       <Tween from={{ opacity: 0, delay: 5 }}>
-          <MyImage src={photo} alt="" />
-        </Tween>
-        <Tween from={{ opacity: 0, delay: 5.2 }}>
-          <EmailImage src={email} alt="" />
-        </Tween>
+        <MyImage src={photo} alt="" onClick={() => setPopUp1(!popUp1)} />
+      </Tween>
+      <Tween from={{ opacity: 0, delay: 5.2 }}>
+        <EmailImage src={email} alt="" onClick={() => setPopUp2(!popUp2)} />
+      </Tween>
 
       <Tween from={{ y: "-20px", opacity: 0 }}>
         <Div1 />
