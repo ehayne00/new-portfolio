@@ -6,6 +6,7 @@ import linkedIn from "../assets/Linkedin-icon.png";
 import photo from "../assets/MyPhoto.JPG";
 import engaging from "../assets/engagingTech.png";
 import email from "../assets/at.svg";
+import map from "../assets/mapImage.png";
 
 const Div1 = styled.div`
   width: 100%;
@@ -191,21 +192,22 @@ const Emily = styled.p`
   color: rgb(240, 128, 128);
   text-shadow: 2px 2px 2px black;
   font-size: 40px;
-  font-family: "Abril Fatface", cursive;
+  font-family: 'Gugi', cursive;
   margin-top: 195px;
   margin-left: 34%;
   z-index: 102;
-  @media (max-width: 870px) {
+  @media (max-width: 1040px) {
     margin-left: 30%;
     font-size: 33px;
   }
-  @media (max-width: 530px) {
+  @media (max-width: 680px) {
     margin-left: 10%;
     font-size: 33px;
   }
-  @media (max-width: 414px) {
+  @media (max-width: 440px) {
     margin-left: 3%;
-    font-size: 33px;
+    font-size: 30px;
+    margin-top: 220px;
   }
 `;
 
@@ -214,21 +216,22 @@ const Violet = styled.p`
   color: rgb(220, 20, 60);
   text-shadow: 2px 2px 2px black;
   font-size: 40px;
-  font-family: "Abril Fatface", cursive;
+  font-family: 'Gugi', cursive;
   margin-top: 195px;
   margin-left: 46%;
   z-index: 102;
-  @media (max-width: 870px) {
+  @media (max-width: 1040px)  {
     margin-left: 46%;
     font-size: 33px;
   }
-  @media (max-width: 530px) {
-    margin-left: 40%;
+  @media (max-width: 680px) {
+    margin-left: 39%;
     font-size: 33px;
   }
-  @media (max-width: 414px) {
+  @media (max-width: 440px) {
     margin-left: 32%;
-    font-size: 33px;
+    font-size: 30px;
+    margin-top: 220px;
   }
 `;
 
@@ -237,21 +240,22 @@ const Haynes = styled.p`
   color: rgb(255, 0, 0);
   text-shadow: 2px 2px 2px black;
   font-size: 40px;
-  font-family: "Abril Fatface", cursive;
+  font-family: 'Gugi', cursive;
   margin-top: 195px;
   margin-left: 59%;
   z-index: 102;
-  @media (max-width: 870px) {
+  @media (max-width: 1040px)  {
     margin-left: 63%;
     font-size: 33px;
   }
-  @media (max-width: 530px) {
+  @media (max-width: 680px) {
     margin-left: 70%;
     font-size: 33px;
   }
-  @media (max-width: 414px) {
-    margin-left: 64%;
-    font-size: 33px;
+  @media (max-width: 440px) {
+    margin-left: 63%;
+    font-size: 30px;
+    margin-top: 220px;
   }
 `;
 
@@ -261,11 +265,11 @@ const Software = styled.p`
   color: rgb(139, 0, 139);
   text-shadow: 1px 1px 1px black;
   font-size: 25px;
-  font-family: "Abril Fatface", cursive;
+  font-family: 'Gugi', cursive;
   margin-top: 470px;
   margin-left: 2%;
   z-index: 102;
-  @media (max-width: 414px) {
+  @media (max-width: 595px) {
     margin-left: 5%;
     width: 90%;
   }
@@ -402,6 +406,7 @@ const Popup1 = styled.div`
   margin-left: 60%;
   margin-top: 30px;
   z-index: 109;
+  box-shadow: 3px 10px 20px 1px black;
   @media (max-width: 1010px) {
     width: 350px;
     height: 280px;
@@ -428,6 +433,7 @@ const Popup2 = styled.div`
   margin-left: 60%;
   margin-top: 430px;
   z-index: 109;
+  box-shadow: 3px 10px 20px 1px black;
   @media (max-width: 1010px) {
     width: 350px;
     height: 100px;
@@ -444,6 +450,47 @@ const Popup2 = styled.div`
   }
 `;
 
+const Button = styled.button`
+  position: absolute;
+  margin-left: 160px;
+  margin-top: 14px;
+  :hover {
+    cursor: pointer;
+  }
+  @media (max-width: 1010px) {
+    margin-left: 140px;
+  }
+  @media (max-width: 954px) {
+    margin-left: 110px;
+  }
+  @media (max-width: 825px) {
+    margin-left: 170px;
+  }
+  @media (max-width: 432px) {
+    margin-left: 110px;
+  }
+`;
+
+const EmailText = styled.p`
+  margin-top: 35px;
+  font-size: 25px;
+`;
+
+const MapText = styled.p`
+  font-size: 18px;
+`;
+
+const MapImage = styled.img`
+  width: 285px;
+  height: auto;
+  box-shadow: 3px 10px 20px 1px rgb(0, 0, 0, 0.6);
+  border: 1px solid black;
+  margin-top: -8px;
+  @media (max-width: 825px) {
+    width: 255px;
+  }
+`;
+
 // font-family: 'Abril Fatface', cursive;
 // font-family: 'Lobster', cursive;
 
@@ -454,13 +501,17 @@ const Home = () => {
     <>
       {popUp1 && (
         <Popup1>
-          <p>North London based</p>
-          <p>X</p>
+          <Button onClick={() => setPopUp1(!popUp1)}>x</Button>
+          <MapText>North London based</MapText>
+          <MapImage src={map} />
         </Popup1>
       )}
       {popUp2 && (
         <Popup2>
-          <p>ehayne00@hotmail.com</p>
+          <Button onClick={() => setPopUp2(!popUp2)}>x</Button>
+          <a href="mailto:ehayne00@hotmail.com">
+            <EmailText>ehayne00@hotmail.com</EmailText>
+          </a>
         </Popup2>
       )}
       <Tween
@@ -483,13 +534,13 @@ const Home = () => {
         <Im>I'm</Im>
       </Tween>
       <Tween from={{ opacity: 0, delay: 3.2 }}>
-        <Emily>Emily</Emily>
+        <Emily>EMILY</Emily>
       </Tween>
       <Tween from={{ opacity: 0, delay: 3.3 }}>
-        <Violet>Violet</Violet>
+        <Violet>VIOLET</Violet>
       </Tween>
       <Tween from={{ opacity: 0, delay: 3.4 }}>
-        <Haynes>Haynes</Haynes>
+        <Haynes>HAYNES</Haynes>
       </Tween>
       <Tween from={{ opacity: 0, delay: 4.2 }}>
         <Software>Full Stack Software Engineer / Web Developer</Software>
