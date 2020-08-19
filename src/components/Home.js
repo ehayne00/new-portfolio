@@ -332,7 +332,7 @@ const WorkImage = styled.img`
 `;
 
 const ExternalLink = ({ to = "/", children }) => (
-  <a href={to} target="_blank">
+  <a href={to} target="_blank noopener noreferrer">
     {children}
   </a>
 );
